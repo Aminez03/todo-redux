@@ -1,4 +1,4 @@
-import { ADD, COMPLET, DELETE, FILTER } from "./actionsTypes";
+import { ADD, COMPLET, DELETE, EDIT, FILTER } from "./actionsTypes";
 
 const initstate={
    list: [
@@ -27,6 +27,10 @@ export const reducer=(state=initstate,action)=>{
         return{
           ...state,list:state.list.filter(el=>el.isDone===false)
         }
+        case EDIT:
+          return{
+            ...state,list:state.list.map(el=>el.id===action.payload.id?{...el,...action.payload}:el)
+          }
       default:
         return state;
   }

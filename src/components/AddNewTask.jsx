@@ -13,6 +13,7 @@ function AddNewTask() {
             show:first,
             isDone: false,
           };
+        first.trim()===""?alert("write something"):
         dispatch(handleAdd(theObject));
         setFirst("")
     }

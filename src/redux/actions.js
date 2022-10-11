@@ -1,4 +1,4 @@
-import { DELETE, COMPLET, ADD, FILTER } from "./actionsTypes"
+import { DELETE, COMPLET, ADD, FILTER, EDIT } from "./actionsTypes"
 
 export const handleDelete=(id)=>{
     return{
@@ -24,3 +24,10 @@ export const handleFilter=()=>{
         type:FILTER}
     
 }
+export const handleEdit=(edit)=>{
+    return{
+        type:EDIT,
+        payload:edit,
+    }
+}
+
